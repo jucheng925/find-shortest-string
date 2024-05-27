@@ -1,5 +1,11 @@
 function findShortestString(arr) {
-  // type your code here
+  const array = []
+  for (let i =0; i < arr.length; i++) {
+    array.push(arr[i].length)
+  }
+  let small = Math.min(...array)
+  let index = array.indexOf(small)
+  return arr[index]
 }
 
 if (require.main === module) {
@@ -16,6 +22,16 @@ if (require.main === module) {
 
   console.log("Expecting: 'lily'");
   console.log("=>", findShortestString(['flower', 'juniper', 'lily', 'dadelion']));
+
+  console.log("");
+
+  console.log("Expecting: 'tim'");
+  console.log("=>", findShortestString(['anna', 'tim', 'albert', 'jim']));
+
+  console.log("");
+
+  console.log("Expecting: 's'");
+  console.log("=>", findShortestString(['ab1', 's', '23bda', '2']));
 
   // BENCHMARK HERE
 }
